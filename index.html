@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokédex</title>
+</head>
+<body>
+
+<div id="fundo">
+    <img src="fundopokemon.jpg" alt="">
+</div>
+
+<main class="pokedex">
+    
+    <section class="esquerda">
+        
+        <header class="luzes">
+            <div class="luzazul"></div>
+            <div class="luzvermelha"></div>
+            <div class="luzamarela"></div>
+            <div class="luzverde"></div>
+        </header>
+        
+        <article class="telabox">
+            <div class="telaprincipal">
+                <img src="" alt="" id="imagem" class="imagem">
+            </div>
+            <h2 class="nome" id="nome">AASAS</h2>
+        </article>
+
+        <div class="botoes">
+            <div class="pretinho" id="aleatorio"></div>
+            <div class="setas" id="setas">
+                <div class="linha"></div>
+                <div class="coluna"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="direita">
+        <div class="telainfo">
+            <input type="text" class="busca" placeholder="NOME OU NUMERO" id="busca">
+            <p class="status" id="status">NENHUM POKEMON</p>
+        </div>
+
+        <div class="numeros" id="numeros"></div>
+        
+        <footer class="acoes">
+            <div class="branquinho" id="limpar"></div>
+            <div class="amarelinho" id="confirmar"></div>
+        </footer>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
