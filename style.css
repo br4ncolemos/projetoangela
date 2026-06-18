@@ -25,9 +25,25 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
     font-family: var(--fonte-principal);
     padding: 1.25rem;
 }
+
+#voltar {
+    padding: 0.7rem;
+    background-color: var(--cor-pincipa);
+    color: white;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+}
+
+#voltar:hover {
+    filter: brightness(1.15);
+    transform: translateY(-5px);
+transition: .2s;
+}
+
 
 #fundo {
     position: fixed;
@@ -283,6 +299,26 @@ body {
     opacity: 0.5;
 }
 
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+    border: 1px solid #0f0;
+    z-index: 99;
+}
+
 #lista {
     width: 100%;
     max-width: 1200px;
@@ -408,5 +444,3 @@ body {
     }
 
 }
-
-
