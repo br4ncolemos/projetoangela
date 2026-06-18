@@ -6,28 +6,27 @@ voltar.addEventListener('click', () => {
 });
 
 async function carregar() {
-
-    let resposta = await fetch('https://pokeapi.co/api/v2/pokemon/');
+    let resposta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=-1');
     let dados = await resposta.json();
 
-    for(let i = 1; i <= dados.results.length; i++) {
+    let conteudoHTML = '';
 
-        let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+    for (let i = 0; i < dados.results.length; i++) {
+        let pokemon = dados.results[i];
+        
+        let numeroPokemon = i + 1; 
 
-        if(!pokemon.ok) {
-            return alert('erro para mostrar os pokemons');
-        }
+        let urlImagem = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numeroPokemon}.png`;
 
-        let info = await pokemon.json();
-
-        lista.innerHTML += `
+        conteudoHTML += `
             <div class="card">
-                <img src="${info.sprites.front_default}">
-                <p>${info.name.toUpperCase()}</p>
+                <img src="${urlImagem}">
+                <p>${pokemon.name.toUpperCase()}</p>
             </div>
         `;
     }
 
+    lista.innerHTML = conteudoHTML;
 }
 
 carregar();
